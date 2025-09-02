@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Quer namorar comigo?</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: white;
+      font-family: Arial, sans-serif;
+      flex-direction: column;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: #000000;
+      text-align: center;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .sim {
+      background: #d6336c;
+      color: white;
+    }
+
+    .nao {
+      background: #666;
+      color: white;
+    }
+
+    #resposta {
+      margin-top: 40px;
+      font-size: 2rem;
+      color: #2b8a3e;
+      display: none;
+      text-align: center;
+    }
+
+    #resposta img {
+      display: block;
+      margin: 20px auto 0;
+      max-width: 200px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Quer namorar comigo?</h1>
+  <div class="buttons">
+    <button class="sim" onclick="aceitou()">Sim!!</button>
+    <button class="nao" onclick="transformar(this)">Não.</button>
+  </div>
+  <div id="resposta">
+    <p>Sabia que você ia dizer SIM!</p>
+    <img src="imagem.jpeg" alt="fofo">
+  </div>
+
+  <script>
+    function transformar(btn) {
+      // transforma o botão de não em sim
+      btn.innerText = "Sim!!";
+      btn.className = "Sim!!";
+      btn.onclick = aceitou;
+    }
+
+    function aceitou() {
+      document.getElementById("resposta").style.display = "block";
+    }
+  </script>
+</body>
+</html>
